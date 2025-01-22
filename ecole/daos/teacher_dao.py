@@ -9,6 +9,7 @@ from typing import Optional
 from models.teacher import Teacher
 from daos.dao import Dao
 
+
 @dataclass
 class TeacherDao(Dao[Teacher]):
 
@@ -41,7 +42,7 @@ class TeacherDao(Dao[Teacher]):
         WHERE 
             t.id_teacher = %s
         """
-            cursor.execute(sql, (id_teacher, ))
+            cursor.execute(sql, (id_teacher,))
             record = cursor.fetchone()
         if record is not None:
             teacher = Teacher(record['first_name'], record['last_name'], record['age'], record['hiring_date'])

@@ -13,6 +13,8 @@ from models.course import Course
 from models.teacher import Teacher
 from models.student import Student
 
+from ecole.daos.student_dao import StudentDao
+
 
 @dataclass
 class School:
@@ -57,3 +59,8 @@ class School:
     def get_teacher_by_id(id_teacher: id) -> Optional[Teacher]:
         teacher_dao: TeacherDao = TeacherDao()
         return teacher_dao.read(id_teacher)
+
+    @staticmethod
+    def get_student_by_id(id_student: id) -> Optional[Student]:
+        student_dao: StudentDao = StudentDao()
+        return student_dao.read(id_student)

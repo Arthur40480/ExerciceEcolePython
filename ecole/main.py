@@ -104,10 +104,14 @@ Bienvenue dans notre école
 
     # affichage de la liste des cours, leur enseignant et leurs élèves
     school.display_courses_list()
+    print(school.get_student_by_id(1))
     print(school.get_teacher_by_id(1))
-    print(school.get_course_by_id(1))
-    print(school.get_course_by_id(2))
-    print(school.get_course_by_id(9))
+
+    first_teacher: Teacher = school.get_teacher_by_id(1)
+    french_course: Course = school.get_course_by_id(1)
+    first_teacher.add_course(french_course)
+    print(french_course)
+
 
 
 if __name__ == '__main__':
