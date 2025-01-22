@@ -5,8 +5,10 @@ Classe School
 """
 
 from dataclasses import dataclass, field
+from typing import Optional
 
 from daos.course_dao import CourseDao
+from daos.teacher_dao import TeacherDao
 from models.course import Course
 from models.teacher import Teacher
 from models.student import Student
@@ -50,3 +52,8 @@ class School:
     def get_course_by_id(id_course: int):
         course_dao: CourseDao = CourseDao()
         return course_dao.read(id_course)
+
+    @staticmethod
+    def get_teacher_by_id(id_teacher: id) -> Optional[Teacher]:
+        teacher_dao: TeacherDao = TeacherDao()
+        return teacher_dao.read(id_teacher)

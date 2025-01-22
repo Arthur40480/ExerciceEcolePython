@@ -104,7 +104,7 @@ Bienvenue dans notre école
 
     # affichage de la liste des cours, leur enseignant et leurs élèves
     school.display_courses_list()
-
+    print(school.get_teacher_by_id(1))
     print(school.get_course_by_id(1))
     print(school.get_course_by_id(2))
     print(school.get_course_by_id(9))
